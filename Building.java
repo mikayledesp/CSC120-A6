@@ -31,7 +31,7 @@ public class Building {
 
     public static void main(String[] args) {
         Building fordHall = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4);
-        System.out.println(fordHall);
+        System.out.println("\n" + fordHall);
     }
 
 }

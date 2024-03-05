@@ -1,8 +1,13 @@
 /* This is a stub for the House class */
-public class House {
+import java.util.ArrayList;
+
+public class House extends Building{
+
+  public boolean hasDiningRoom;
+  public int nResidents;
 
   public House() {
-    System.out.println("You have built a house: 🏠");
+    System.out.println("\nYou have built a house: 🏠");
   }
 
   public static void main(String[] args) {
