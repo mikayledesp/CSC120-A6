@@ -1,12 +1,14 @@
 /* This is a stub for the Cafe class */
-public class Cafe {
+public class Cafe extends Building {
 
-    public Cafe() {
+    public Cafe(String name, String address, int nFloors){
+        super(name, address, nFloors);
         System.out.println("You have built a cafe: ☕");
     }
     
     public static void main(String[] args) {
-        new Cafe();
+        Cafe l = new Cafe("Neilson", "7 Neilson Drive, Northampton, MA 01063", 5);
+        System.out.println(l);
     }
     
 }
