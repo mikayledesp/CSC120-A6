@@ -7,7 +7,7 @@ public class Cafe extends Building {
     }
     
     public static void main(String[] args) {
-        Cafe l = new Cafe("Neilson", "7 Neilson Drive, Northampton, MA 01063", 5);
+        Cafe l = new Cafe("Compass Café", "Neilson Drive", 1);
         System.out.println(l);
     }
     
