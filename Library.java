@@ -2,6 +2,8 @@
 
 import java.util.Hashtable;
 
+import javax.management.RuntimeErrorException;
+
 public class Library extends Building {
 
   private Hashtable<String, Boolean> collection;
@@ -17,7 +19,21 @@ public class Library extends Building {
       System.out.println("The Book: " + title + "has been added to" + this.name );
     }
     public String removeTitle(String title){
-      return null ;
+      if (this.collection.containsKey(title)){
+        this.collection.remove(title);
+        System.out.println(title + "has been removed from" + this.name + ".");
+      } else{
+        throw new RuntimeErrorException(null, this.name + "doesn't have: "  + title + ", so it couldn't be removed" );
+      }
+      return title;
+    }
+
+    public void checkOut(String title){
+
+    }
+
+    public void returnBook (String title){
+      
     }
 
     public static void main(String[] args) {
