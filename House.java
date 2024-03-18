@@ -56,10 +56,10 @@ public class House extends Building{
  */
   public boolean isResident(String person){
     if (this.residents.contains(person)){
-      System.out.println(name + "lives here!");
+      System.out.println( person + "lives here!");
       return true;
     } 
-    System.out.println(name + " doesn't lives here!");
+    System.out.println(person + " doesn't live here!");
     return false;
     
   }
