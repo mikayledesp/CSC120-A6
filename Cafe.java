@@ -27,16 +27,21 @@ public class Cafe extends Building {
         
     }
     /**
-     * Sells coffe by subtracting from inventory based on values set in main
+     * Sells coffe by subtracting from inventory based on values set in main but only if theres enoght supplies to do so which is determined by the if statement 
      * @param size
      * @param nSugarPackets
      * @param nCreams
      */
     public void sellCoffee(int size, int nSugarPackets, int nCreams){
-    this.nCoffeeOunces -= nCoffeeOunces;
-    this.nSugarPackets -= nSugarPackets;
-    this.nCreams -= nCreams;
-    this.nCups -= 1 ;
+        if (this.nCreams > nCreams && this.nCoffeeOunces > nCoffeeOunces && this.nSugarPackets > nSugarPackets && this.nCups > 0 ){
+        this.nCoffeeOunces -= nCoffeeOunces;
+        this.nSugarPackets -= nSugarPackets;
+        this.nCreams -= nCreams;
+        this.nCups -= 1 ;
+        } else{
+            System.out.println("Coffe cannot be sold becuase there is not enough stock. Please try again latter after everything has been replenished!");
+        }
+    
 
     }
 /**
@@ -61,6 +66,15 @@ public class Cafe extends Building {
         System.out.println(L);
         L.sellCoffee(4, 3, 4);
         System.out.println("Number of Cups: "+L.nCups);
+        System.out.println(L);
+        System.out.println("Number of Cups: " + L.nCups);
+        System.out.println("Number of Creams: " + L.nCreams);
+        System.out.println("Number of Suger Packets" + L.nSugarPackets);
+        L.sellCoffee(16, 3, 4);
+        System.out.println("Number of Cups: " + L.nCups);
+        System.out.println("Number of Creams: " + L.nCreams);
+        System.out.println("Number of Suger Packets" + L.nSugarPackets);
+        L.restock(1, 10, 1, 1);
 
     }
     

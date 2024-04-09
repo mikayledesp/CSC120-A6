@@ -29,18 +29,18 @@ public class House extends Building{
     this.residents = new ArrayList<String>();
   }
   /**
-   * Acessor for hasDinningRoom
-   * @return if specifc house being called has a dinning room or not
+   * Acessor for hasElevator
+   * @return if specifc house being called has an elevator  or not
    */
-  public boolean getHasDinningRoom{
-    return this.hasDiningRoom
+  public boolean getHasElevator() {
+    return this.hasElevator;
   }
   /**
-   * Acessor for hasElevator
-   * @return if specific house being called ha a elevator or not 
+   * Acessor for hasDinningRoom
+   * @return if specific house being called has a dinning room or not 
    */
-  public boolean getHasDinningRoom{
-    return this.hasDiningRoom
+  public boolean getHasDinningRoom() {
+    return this.hasDiningRoom;
   }
 
   /**
@@ -51,7 +51,7 @@ public class House extends Building{
  */
 public boolean isResident(String person){
   if (this.residents.contains(person)){
-    System.out.println( person + "lives here!");
+    System.out.println( person + " lives here!");
     return true;
   } 
   System.out.println(person + " doesn't live here!");
@@ -86,7 +86,7 @@ public boolean isResident(String person){
     return "New Resident" + name + " has moved out";
     }
    else{
-    System.out.println("Error,"+ name + "cannot be moved out. Please try to move out someone who actually lives here!");
+    return "Error,"+ name + "cannot be moved out. Please try to move out someone who actually lives here!";
    }
   }
 
