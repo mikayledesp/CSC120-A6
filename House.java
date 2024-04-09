@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 public class House extends Building{
 
-  public boolean hasDiningRoom;
-  public boolean hasElevator; 
+  private boolean hasDiningRoom;
+  private boolean hasElevator; 
   // list that stores the names of all residents that live in said house
-  ArrayList<String> residents;
+  private ArrayList<String> residents;
   
   public int nResidents;
 /**
@@ -28,14 +28,50 @@ public class House extends Building{
     
     this.residents = new ArrayList<String>();
   }
+  /**
+   * Acessor for hasDinningRoom
+   * @return if specifc house being called has a dinning room or not
+   */
+  public boolean getHasDinningRoom{
+    return this.hasDiningRoom
+  }
+  /**
+   * Acessor for hasElevator
+   * @return if specific house being called ha a elevator or not 
+   */
+  public boolean getHasDinningRoom{
+    return this.hasDiningRoom
+  }
+
+  /**
+ * Checks to see if the residents are contained in a specific house and returns either true of false based on that
+ * @param person
+ * @return true
+ * @return false
+ */
+public boolean isResident(String person){
+  if (this.residents.contains(person)){
+    System.out.println( person + "lives here!");
+    return true;
+  } 
+  System.out.println(person + " doesn't live here!");
+  return false;
+  
+}
 /**
  * Move's in residents by adding them to the resident's list for a specific house
  * @param name
  * 
  */
   public void moveIn(String name){
-    this.residents.add(name);
-    System.out.println("New Resident " + name + " has moved in");
+    if (!isResident(name)){
+      this.residents.add(name);
+      System.out.println("New Resident " + name + " has moved in");
+  
+    }
+    else{
+      System.out.println("Error, " + name + " cannot move into this house. They might already live here !");
+    }
 
   }
 /**
@@ -44,25 +80,16 @@ public class House extends Building{
  * 
  */
   public String moveOut(String name){
-    this.residents.remove(name);
+    if (!isResident(name)){
+      this.residents.remove(name);
     System.out.println("New Resident " + name + " has moved out");
     return "New Resident" + name + " has moved out";
+    }
+   else{
+    System.out.println("Error,"+ name + "cannot be moved out. Please try to move out someone who actually lives here!");
+   }
   }
-/**
- * Checks to see if the residents are contained in a specific house and returns either true of false based on that
- * @param person
- * @return true
- * @return false
- */
-  public boolean isResident(String person){
-    if (this.residents.contains(person)){
-      System.out.println( person + "lives here!");
-      return true;
-    } 
-    System.out.println(person + " doesn't live here!");
-    return false;
-    
-  }
+
   /**
    * Print statements to test the methods above 
    * @param args
